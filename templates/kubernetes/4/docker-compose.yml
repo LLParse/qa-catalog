@@ -55,12 +55,11 @@ etcd:
     RANCHER_DEBUG: ${DEBUG}
   links:
   - data
-  - discovery
   volumes_from:
     - data
 
 data:
-  image: llparse/etcd
+  image: busybox
   entrypoint: /bin/true
   net: none
   volumes:
