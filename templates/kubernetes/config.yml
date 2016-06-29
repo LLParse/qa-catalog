@@ -2,4 +2,4 @@ name: Kubernetes
 description: |
   Kubernetes service
 version: v1.2.4-rancher7_1
-category: System
+category: Systemd
