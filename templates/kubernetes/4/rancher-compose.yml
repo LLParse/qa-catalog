@@ -4,6 +4,10 @@
   description: "Rancher Kubernetes service"
 
 kubernetes:
+    scale_policy:
+        min: 1
+        max: 3
+        increment: 1
     metadata:
         sans:
         - "IP:10.43.0.1"
@@ -18,9 +22,9 @@ kubernetes:
 
 etcd:
     scale_policy:
-        increment: 1
-        max: 3
         min: 1
+        max: 3
+        increment: 1
     health_check:
         request_line: GET /health HTTP/1.0
         port: 2379
@@ -39,6 +43,10 @@ rancher-kubernetes-agent:
         healthy_threshold: 2
 
 scheduler:
+    scale_policy:
+        min: 1
+        max: 3
+        increment: 1
     health_check:
         request_line: GET /healthz HTTP/1.0
         port: 10251
@@ -48,6 +56,10 @@ scheduler:
         healthy_threshold: 2
 
 controller-manager:
+    scale_policy:
+        min: 1
+        max: 3
+        increment: 1
     health_check:
         request_line: GET /healthz HTTP/1.0
         port: 10252
